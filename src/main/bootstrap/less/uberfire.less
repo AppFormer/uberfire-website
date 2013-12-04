@@ -25,6 +25,10 @@ body {
     }
 }
 
+.space-before {
+    margin-top: @font-size-h1;
+}
+
 .navbar .container {
     background-color: inherit;
 }
@@ -38,7 +42,23 @@ body {
     background-position: top center;
 }
 
-img.uf-dot-small {
-    padding-bottom: 2px;
-    padding-right: 2px;
+img.uf-dot {
+    a.navbar-brand & {
+        padding-bottom: 2px;
+        padding-right: 2px;
+    }
+    h1 & {
+        padding-bottom: 5px;
+        padding-right: 6px;
+        padding-left: 4px;
+    }
+}
+
+// qualifying with .row keeps the jumbotron heading clean
+.row h1 {
+    background-color: #000;
+    border-top: 5px solid @brand-primary;
+    padding: 5px;
+    color: #fff;
+    width: 100%;
 }

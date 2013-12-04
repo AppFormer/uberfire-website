@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<#assign pageTitle = "UberFire">
-<#include "*/include/header.html">
+<#assign pageTitle = "UberFire"> <#include "*/include/header.html">
 
 <div class="container no-padding">
   <div class="jumbotron">
-    <h1 class="text-center" style="margin-top: 0">Welcome to UberFire</h1>
+    <h1 class="text-center" style="margin-top: 0">Hi. I'm UberFire.</h1>
     <p class="text-center">
       <!-- Relative positioning allows us to rise above the body-glow overlay so the logo isn't washed out. -->
       <img style="position: relative" src="images/uf-logo.png">
@@ -18,11 +17,65 @@
 </div>
 
 <div class="container">
+
+  <!-- Flexible Layout -->
+  <div class="row space-before">
+    <div class="col-md-6">
+      <h1>
+        <img class="uf-dot" src="icons/uf-dot-36.png">Flexible Layout
+      </h1>
+    </div>
+    <div class="col-md-6"></div>
+  </div>
   <div class="row">
-    <div class="col-md-12">
-      <p>This is some content on a typical page.
+    <div class="col-md-6">
+      <p>Drag-and-drop layouts. Give your users more control over their work environment.
+    </div>
+    <div class="col-md-6">
+      <pre>
+code {
+  sample.here;
+}</pre>
     </div>
   </div>
+
+  <!-- Powerful Backend -->
+  <div class="row space-before">
+    <div class="col-md-6"></div>
+    <div class="col-md-6">
+          <h1><img class="uf-dot" src="icons/uf-dot-36.png">Powerful Backend</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <pre>
+code {
+  sample.here;
+}</pre>
+    </div>
+    <div class="col-md-6">
+      <p>A Metadata Engine, Security Framework and a VFS API (backport of NIO.2) are key components of UberFire
+        Backend.
+    </div>
+  </div>
+
+  <!-- Open Source -->
+  <div class="row space-before">
+    <div class="col-md-6">
+      <h1><img class="uf-dot" src="icons/uf-dot-36.png">Open Source</h1>
+    </div>
+    <div class="col-md-6"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <p>Developed in the open by the people who use it. Join us!
+    </div>
+    <div class="col-md-6">
+      <pre>
+git clone https://github.com/uberfire/uberfire.git</pre>
+    </div>
+  </div>
+
 </div>
 
 <#include "*/include/footer.html">
