@@ -18,59 +18,67 @@
 
 <div class="container">
 
-  <!-- Flexible Layout -->
-  <div class="row space-before">
-    <div class="col-md-6">
+  <div class="row">
+    <!-- Flexible Layout -->
+    <div class="col-md-6 space-before">
       <h1>
         <img class="uf-dot" src="icons/uf-dot-36-333.png">Flexible Layout
       </h1>
+      <p class="text-center">
+        <img class="img-responsive" alt="Demonstration of drag-and-drop views" src="screenshots/drag-views.gif">
+      <p><em>Drag-and-drop layouts</em> give your users more control over their work environment.
     </div>
-    <div class="col-md-6"></div>
+
+    <!-- Powerful VFS -->
+    <div class="col-md-6 space-before">
+      <h1><img class="uf-dot" src="icons/uf-dot-36-333.png">Powerful VFS</h1>
+      <pre>
+@Inject private FileSystem fs;
+@Inject private Caller&lt;VFSService&gt; vfsServices;
+
+public void onSave() {
+  Path path = PathFactory.newPath(
+      fs, "readme.txt", "default://readme.txt");
+  vfsServices.call().write(path, "Hello World!");
+}</pre>
+      <p>
+        A powerful Virtual File System layer over jgit or any NIO.2 filesystem. Supports <em>change tracking</em> and
+        includes a <em>metadata engine</em>, <em>full-text search</em>, and <em>security integration</em>.
+    </div>
   </div>
+
   <div class="row">
-    <div class="col-md-6">
-      <p>Drag-and-drop layouts. Give your users more control over their work environment.
-    </div>
-    <div class="col-md-6">
+    <!-- Fine-grained security -->
+    <div class="col-md-6 space-before">
+      <h1><img class="uf-dot" src="icons/uf-dot-36-333.png">Fine-Grained Security</h1>
       <pre>
 code {
   sample.here;
 }</pre>
+      <p>Fully pluggable authentication and authorization system. Includes file, database, and JAAS out-of-the-box.
     </div>
-  </div>
 
-  <!-- Powerful Backend -->
-  <div class="row space-before">
-    <div class="col-md-6"></div>
-    <div class="col-md-6">
-          <h1><img class="uf-dot" src="icons/uf-dot-36-333.png">Powerful Backend</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <pre>
-code {
-  sample.here;
-}</pre>
-    </div>
-    <div class="col-md-6">
-      <p>A Metadata Engine, Security Framework and a VFS API (backport of NIO.2) are key components of UberFire
-        Backend.
-    </div>
-  </div>
-
-  <!-- Open Source -->
-  <div class="row space-before">
-    <div class="col-md-6">
+    <!-- Open Source -->
+    <div class="col-md-6 space-before">
       <h1><img class="uf-dot" src="icons/uf-dot-36-333.png">Open Source</h1>
-    </div>
-    <div class="col-md-6"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
       <p>Developed in the open by the people who use it. Join us!
+      <pre>
+git clone https://github.com/uberfire/uberfire.git</pre>
     </div>
-    <div class="col-md-6">
+  </div>
+
+  <div class="row">
+    <!-- Modular Design -->
+    <div class="col-md-6 space-before">
+      <h1><img class="uf-dot" src="icons/uf-dot-36-333.png">Modular Design</h1>
+      <p class="text-center"><img class="img-responsive" src="screenshots/uberfire-module-graph.png">
+      <p>Use the parts you want, and leave the rest behind.
+    </div>
+
+    <!-- Open Source -->
+    <div class="col-md-6 space-before">
+      <h1><img class="uf-dot" src="icons/uf-dot-36-333.png">Open Source</h1>
+      <p>Developed in the open by the people who use it. Join us!
       <pre>
 git clone https://github.com/uberfire/uberfire.git</pre>
     </div>
