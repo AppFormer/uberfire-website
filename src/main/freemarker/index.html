@@ -11,7 +11,7 @@
       UberFire is a Rich Client Platform for the web.<br> Make maintainable, customizable workbench-style apps in
       no time flat.
     <p class="text-right">
-      <a class="btn btn-success btn-lg" role="button" href="quickstart.html">Try it now</a>
+      <a class="btn btn-success btn-lg" role="button" href="quickstart.html">Try me now</a>
     </p>
   </div>
 </div>
@@ -19,6 +19,20 @@
 <div class="container">
 
   <div class="row">
+    <div class="col-md-12">
+      <p class="lead">
+        UberFire is a Rich Client Platform that builds on the strengths of <a href="http://gwtproject.org">GWT</a> and <a
+          href="http://jboss.org/errai">Errai</a>.
+      <p class="lead">Write and maintain your application code in the Java programming language with all of the Java
+        tooling at your disposal, then deploy it to the browser as a native JavaScript + HTML application.
+      <p class="text-center">
+        <img class="img-responsive center-block" src="images/shared-code-flowchart.png"
+            alt="Flowchart showing one Java source file being compiled both to JavaScript and a Java class file">
+    </div>
+  </div>
+  
+  <div class="row">
+
     <!-- Flexible Layout -->
     <div class="col-md-6 space-before">
       <h1>
@@ -26,28 +40,30 @@
       </h1>
       <p class="text-center">
         <img class="img-responsive" alt="Demonstration of drag-and-drop views" src="screenshots/drag-views.gif">
-      <p><strong>Drag-and-drop layouts</strong> give your users more control over their work environment.
+      <p><strong>Drag-and-drop layouts</strong> give your users control over their work environment.
     </div>
 
     <!-- Powerful VFS -->
     <div class="col-md-6 space-before">
       <h1><img class="uf-dot" src="icons/uf-dot-36-333.png">Powerful VFS</h1>
-      <pre>
-@Inject private FileSystem fs;
-@Inject private Caller&lt;VFSService&gt; vfsServices;
-
-public void onSave() {
-  Path path = PathFactory.newPath(
-      fs, "readme.txt", "default://readme.txt");
-  vfsServices.call().write(path, "Hello World!");
-}</pre>
       <p>
         A powerful Virtual File System layer over jgit or any NIO.2 filesystem. Supports
         <strong>change tracking</strong> and includes a <strong>metadata engine</strong>, <strong>full-text
         search</strong>, and <strong>security integration</strong>.</div>
+      <p>Client-side code that creates a file in the server-side VFS:
+      <pre>
+@Inject private FileSystem fs;
+@Inject private Caller&lt;VFSService&gt; vfsServices;
+
+public void onSaveButtonClicked() {
+  Path path = PathFactory.newPath(
+      fs, "readme.txt", "default://readme.txt");
+  vfsServices.call().write(path, "Hello World!");
+}</pre>
   </div>
 
   <div class="row">
+
     <!-- Fine-grained security -->
     <div class="col-md-6 space-before">
       <h1><img class="uf-dot" src="icons/uf-dot-36-333.png">Fine-Grained Security</h1>
@@ -73,6 +89,7 @@ code {
   </div>
 
   <div class="row">
+
     <!-- Modular Design -->
     <div class="col-md-6 space-before">
       <h1><img class="uf-dot" src="icons/uf-dot-36-333.png">Modular Design</h1>
