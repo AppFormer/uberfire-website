@@ -25,13 +25,13 @@
       </div>
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="index.html">Discover</a></li>
-          <li><a href="quickstart.html">Try</a></li>
-          <li><a href="tutorial.html">Learn</a></li>
-          <li><a href="community.html">Contribute</a></li>
+          <li <#if pageTitle?? && pageTitle = "UberFire">class="active"</#if>><a href="index.html">Discover</a></li>
+          <li <#if pageTitle?? && pageTitle = "UberFire Quick Start">class="active"</#if>><a href="quick-start.html">Try</a></li>
+          <li <#if pageTitle?? && pageTitle = "UberFire Tutorial">class="active"</#if>><a href="tutorial.html">Learn</a></li>
+          <li <#if pageTitle?? && pageTitle = "UberFire Community">class="active"</#if>><a href="community.html">Contribute</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="about.html">About</a></li>
+          <li <#if pageTitle?? && pageTitle = "About UberFire">class="active"</#if>><a href="about.html">About</a></li>
         </ul>
       </nav>
     </div>

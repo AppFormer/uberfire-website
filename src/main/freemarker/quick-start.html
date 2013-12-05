@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<#assign pageTitle = "UberFire Quick Start">
+<#include "*/include/header.html">
+
+<div class="container">
+  <div class="row">
+    <div class="adoc-content">
+
+<div id="header">
+<h1>UberFire Quick Start</h1>
+<span id="author" class="author">Jonathan Fuerth</span><br>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_get_an_app_server">Get an app server</a></li>
+<li><a href="#_start_the_app_server">Start the app server</a></li>
+<li><a href="#_get_the_pre_built_war_file">Get the pre-built WAR file</a></li>
+<li><a href="#_deploy_the_war">Deploy the WAR</a></li>
+<li><a href="#_see_it_work">See it work!</a></li>
+<li><a href="#_what_next">What next?</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This guide will help you install an UberFire demo application on your
+own computer. This will help let you try out an UberFire application,
+and prove the UberFire apps work with your setup.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_get_an_app_server">Get an app server</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The pre-built UberFire Showcase Web App is available for JBoss AS
+7.1.1, EAP 6.2, and Tomcat.</p>
+</div>
+<div class="paragraph">
+<p>If you don&#8217;t already have one of these app servers installed on your
+computer, don&#8217;t worry. In all cases, installing is as easy as
+downloading and unzipping.</p>
+</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+JBoss AS 7.1.1, EAP 6.2
+</td>
+<td class="hdlist2">
+<p><a href="http://www.jboss.org/jbossas/download">Download from here</a></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Tomcat 7
+</td>
+<td class="hdlist2">
+<p><a href="http://tomcat.apache.org/download-70.cgi">Download from here</a></p>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Once the file has finished downloading, unzip it wherever you like.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_start_the_app_server">Start the app server</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now start the app server using a command line terminal. Use the <code>cd</code>
+command to change the working directory of your terminal to the place
+where you unzipped the application server, then execute one of the
+following commands, based on your operating system and choice of app
+server:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<colgroup>
+<col style="width:33%;">
+<col style="width:33%;">
+<col style="width:33%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Server</th>
+<th class="tableblock halign-left valign-top">*nix, Mac OS X</th>
+<th class="tableblock halign-left valign-top">Windows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AS 7, EAP 6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bin/standalone.sh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bin\standalone.bat</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tomcat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bin/startup.sh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bin\startup.bat</p></td>
+</tr>
+</tbody>
+</table>
+
+<div class="paragraph">
+<p>Then visit the URL <a href="http://localhost:8080/">http://localhost:8080/</a> and you should see a webpage
+confirming that the app server is running.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_get_the_pre_built_war_file">Get the pre-built WAR file</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now download the pre-built WAR file for the server you&#8217;ve installed
+and started.</p>
+</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+JBoss AS 7.1.1, EAP 6.2
+</td>
+<td class="hdlist2">
+<p><a href="https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&amp;g=org.uberfire&amp;a=showcase-distribution-wars&amp;v=0.4.0-SNAPSHOT&amp;e=0.war&amp;c=jboss-as7">Download WAR file</a></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Tomcat 7
+</td>
+<td class="hdlist2">
+<p><a href="https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&amp;g=org.uberfire&amp;a=showcase-distribution-wars&amp;v=0.4.0-SNAPSHOT&amp;e=0.war&amp;c=tomcat7">Download WAR file</a></p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_deploy_the_war">Deploy the WAR</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Rename the downloaded WAR file to <code>uberfire-showcase.war</code> and copy it
+into the auto-deployment directory for your app server:</p>
+</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+JBoss AS 7.1.1, EAP 6.2
+</td>
+<td class="hdlist2">
+<p>standalone/deployments/</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Tomcat
+</td>
+<td class="hdlist2">
+<p>webapps/</p>
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="title">Example: JBoss AS 7.1.1 on Unix/Linux/Mac</div>
+<div class="content">
+<pre>$&gt; mv ~/Downloads/showcase-distribution-wars-0.4.0-20131125.172155-223-jboss-as7.0.war standalone/deployments/uberfire-showcase.war</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should notice some disk activity, and if you&#8217;re using JBoss AS or
+EAP, you will see some logging on the console where you started the
+server. Tomcat logs only to files by default, so you won&#8217;t see logs in
+your Tomcat terminal at this stage.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_see_it_work">See it work!</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now visit <a href="http://localhost:8080/uberfire-showcase/">http://localhost:8080/uberfire-showcase/</a> and sign in with
+username <code>admin</code>, password <code>admin</code>.</p>
+</div>
+<div class="paragraph">
+<p>Once you&#8217;re logged in, here are some things to try:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Try switching perspectives in the perspective menu.</p>
+</li>
+<li>
+<p>Try dragging a view from one panel to another.</p>
+</li>
+<li>
+<p>Try adding a new location for views by dragging a view near the edge
+of the screen.</p>
+</li>
+<li>
+<p>Try exploring the filesystem in the file explorer.</p>
+</li>
+<li>
+<p>Try selecting a file and using the editor.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_next">What next?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that you&#8217;ve deployed an UberFire app and had some hands-on time
+with it, why not create your own from scratch? Our
+<a href="getting-started.asciidoc">tutorial guide</a> provides a detailed
+walkthrough of the entire project setup process.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2013-11-25 18:22:27 EST
+</div>
+</div>
+
+</div></div></div>
+
+<#include "*/include/footer.html">

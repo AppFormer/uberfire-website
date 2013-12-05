@@ -49,7 +49,7 @@
       <p>
         A powerful Virtual File System layer over jgit or any NIO.2 filesystem. Supports
         <strong>change tracking</strong> and includes a <strong>metadata engine</strong>, <strong>full-text
-        search</strong>, and <strong>security integration</strong>.</div>
+        search</strong>, and <strong>security integration</strong>.
       <p>Client-side code that creates a file in the server-side VFS:
       <pre>
 @Inject private FileSystem fs;
@@ -60,6 +60,7 @@ public void onSaveButtonClicked() {
       fs, "readme.txt", "default://readme.txt");
   vfsServices.call().write(path, "Hello World!");
 }</pre>
+    </div>
   </div>
 
   <div class="row">
