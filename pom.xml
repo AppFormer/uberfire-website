@@ -9,8 +9,75 @@
   <packaging>war</packaging>
 
   <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-http</artifactId>
+        <version>2.5</version>
+      </extension>
+    </extensions>
     <plugins>
 
+      <!-- Using Wagon to grab the latest quick-start and tutorial asciidoc 
+        files from github -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>wagon-maven-plugin</artifactId>
+        <version>1.0-beta-4</version>
+
+        <configuration>
+          <serverId>github-uberfire</serverId>
+          <url>https://raw.github.com/uberfire/uberfire/master/uberfire-docs/src/main/asciidoc/</url>
+          <toDir>${project.build.directory}/asciidoc-staging</toDir>
+        </configuration>
+
+        <!-- download sections of the user guide to the asciidoc staging area -->
+        <executions>
+          <execution>
+            <id>download-tutorial-asciidoc</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>download-single</goal>
+            </goals>
+            <configuration>
+              <fromFile>tutorial.asciidoc</fromFile>
+            </configuration>
+          </execution>
+          <execution>
+            <id>download-quick-start-asciidoc</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>download-single</goal>
+            </goals>
+            <configuration>
+              <fromFile>quick-start.asciidoc</fromFile>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      
+      <!-- copy the freemarker templates to the staging area -->
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>generate-sources</phase>
+            <configuration>
+              <tasks>
+                <mkdir dir="target/freemarker-staging"/>
+                <copy todir="target/freemarker-staging">
+                  <fileset dir="src/main/freemarker" includes="**"/>
+                </copy>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      
+      <!-- Process asciidoc from the staging area into the webapp target dir -->
       <plugin>
         <groupId>org.asciidoctor</groupId>
         <artifactId>asciidoctor-maven-plugin</artifactId>
@@ -26,7 +93,8 @@
               <backend>html</backend>
               <templateDir>src/main/asciidoc/templates/</templateDir>
               <headerFooter>true</headerFooter>
-              <outputDirectory>src/main/freemarker/</outputDirectory>
+              <sourceDirectory>${project.build.directory}/asciidoc-staging</sourceDirectory>
+              <outputDirectory>${project.build.directory}/freemarker-staging</outputDirectory>
               <attributes>
                 <link-suffix>.html</link-suffix>
               </attributes>
@@ -35,6 +103,7 @@
         </executions>
       </plugin>
   
+      <!-- compile less sources into css stylesheet in the target webapp dir -->
       <plugin>
         <groupId>org.lesscss</groupId>
         <artifactId>lesscss-maven-plugin</artifactId>
@@ -57,11 +126,12 @@
         </executions>
       </plugin>
 
+      <!-- process freemarker templates from the staging area into the webapp target dir -->
       <plugin>
         <configuration>
           <cfgFile>src/main/freemarker/config.fmpp</cfgFile>
           <outputDirectory>${project.build.directory}/${project.build.finalName}</outputDirectory>
-          <templateDirectory>src/main/freemarker/</templateDirectory>
+          <templateDirectory>${project.build.directory}/freemarker-staging</templateDirectory>
         </configuration>
         <groupId>com.googlecode.fmpp-maven-plugin</groupId>
         <artifactId>fmpp-maven-plugin</artifactId>
