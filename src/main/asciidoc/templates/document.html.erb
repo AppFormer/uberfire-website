@@ -5,6 +5,7 @@
 <div class="container">
   <div class="row">
     <div class="adoc-content">
+<#noparse>
 <%
 unless noheader %>
 <div id="header"><%
@@ -71,8 +72,7 @@ unless !footnotes? || attr?(:nofootnotes) %>
 </div><%
   end %>
 </div><%
-end %><%
-unless nofooter %>
+end %>
 <div id="footer">
 <div id="footer-text"><%
 if attr? :revnumber %>
@@ -83,7 +83,7 @@ if attr? 'last-update-label' %>
 end %><%= (docinfo_content = (docinfo :footer)).empty? ? nil : %(
 #{docinfo_content}) %>
 </div>
-</div><%
-end %>
+</div>
+</#noparse>
 
 <#include "*/include/footer.html">
