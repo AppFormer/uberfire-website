@@ -18,54 +18,38 @@
     </extensions>
     <plugins>
 
-      <!-- Using Wagon to grab the latest quick-start and tutorial asciidoc 
-        files from github -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>wagon-maven-plugin</artifactId>
-        <version>1.0-beta-4</version>
-
-        <configuration>
-          <serverId>github-uberfire</serverId>
-          <url>https://raw.github.com/uberfire/uberfire/master/uberfire-docs/src/main/asciidoc/</url>
-          <toDir>${project.build.directory}/asciidoc-staging</toDir>
-        </configuration>
-
-        <!-- download sections of the user guide to the asciidoc staging area -->
-        <executions>
-          <execution>
-            <id>download-tutorial-asciidoc</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>download-single</goal>
-            </goals>
-            <configuration>
-              <fromFile>tutorial.asciidoc</fromFile>
-            </configuration>
-          </execution>
-          <execution>
-            <id>download-quick-start-asciidoc</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>download-single</goal>
-            </goals>
-            <configuration>
-              <fromFile>quick-start.asciidoc</fromFile>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      
-      <!-- copy the freemarker templates to the staging area -->
       <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
         <executions>
+        
+          <!-- grab the latest quick-start and tutorial asciidoc files from github -->
           <execution>
+            <id>stage-asciidoc</id>
             <phase>generate-sources</phase>
             <configuration>
               <tasks>
-                <mkdir dir="target/freemarker-staging"/>
-                <copy todir="target/freemarker-staging">
+                <mkdir dir="${project.build.directory}/asciidoc-staging"/>
+                <get dest="${project.build.directory}/asciidoc-staging/">
+                  <resources>
+                    <url url="https://raw.github.com/uberfire/uberfire/master/uberfire-docs/src/main/asciidoc/tutorial.asciidoc"/>
+                    <url url="https://raw.github.com/uberfire/uberfire/master/uberfire-docs/src/main/asciidoc/quick-start.asciidoc"/>
+                  </resources>
+                </get>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+
+          <!-- copy the freemarker templates to the staging area -->
+          <execution>
+            <id>stage-freemarker</id>
+            <phase>generate-sources</phase>
+            <configuration>
+              <tasks>
+                <mkdir dir="${project.build.directory}/freemarker-staging"/>
+                <copy todir="${project.build.directory}/freemarker-staging">
                   <fileset dir="src/main/freemarker" includes="**"/>
                 </copy>
               </tasks>
@@ -74,6 +58,7 @@
               <goal>run</goal>
             </goals>
           </execution>
+
         </executions>
       </plugin>
       
@@ -155,8 +140,17 @@
         </configuration>
       </plugin>
     </plugins>
+    
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>1.7</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
-
+  
   <profiles>
     <profile>
       <id>openshift</id>
