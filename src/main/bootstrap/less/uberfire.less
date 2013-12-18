@@ -67,9 +67,41 @@ img.uf-dot {
 // ASCIIDOC STUFF!
 
 .adoc-content {
-    .make-md-column(12);
+    .make-md-column-offset(1);
+    .make-md-column(9);
     
     table {
         .table;
+    }
+    
+    .author {
+        display: none;
+    }
+    
+    .title {
+        color: @brand-primary;
+        font-weight: 200;
+    }
+    
+    .admonitionblock {
+        margin-top: @line-height-computed;
+        border-top: 5px solid @brand-primary;
+        background-color: #eee;
+        
+        td {
+            padding: @line-height-computed;
+            min-width: 100px;
+        }
+        
+        .title {
+            margin-bottom: (@line-height-computed / 2);
+        }
+    }
+    
+    h1,
+    h2,
+    h3 {
+      margin-top: @line-height-computed * 2;
+      margin-bottom: (@line-height-computed / 2);
     }
 }
