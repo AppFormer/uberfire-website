@@ -1,0 +1,6 @@
+= UberFire Website
+
+This is the source for the UberFire website which is hosted at
+http://www.uberfireframework.org/.
+
+Pull requests are always welcome. Please contribute!
