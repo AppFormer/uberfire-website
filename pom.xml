@@ -23,8 +23,8 @@
                 <mkdir dir="${project.build.directory}/asciidoc-staging"/>
                 <get dest="${project.build.directory}/asciidoc-staging/">
                   <resources>
-                    <url url="https://raw.github.com/uberfire/uberfire/master/uberfire-docs/src/main/asciidoc/tutorial.asciidoc"/>
-                    <url url="https://raw.github.com/uberfire/uberfire/master/uberfire-docs/src/main/asciidoc/quick-start.asciidoc"/>
+                    <url url="https://raw.github.com/uberfire/uberfire/0.5.x/uberfire-docs/src/main/asciidoc/tutorial.asciidoc"/>
+                    <url url="https://raw.github.com/uberfire/uberfire/0.5.x/uberfire-docs/src/main/asciidoc/quick-start.asciidoc"/>
                   </resources>
                 </get>
               </tasks>
