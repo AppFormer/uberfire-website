@@ -16,6 +16,7 @@
   > .item {
     display: none;
     position: relative;
+    padding: 7% 15%;
     .transition(.6s ease-in-out left);
 
     // Account for jankitude on images
@@ -71,7 +72,9 @@
   top: 0;
   left: 0;
   bottom: 0;
+
   width: @carousel-control-width;
+  min-width: 30px;
   .opacity(@carousel-control-opacity);
   font-size: @carousel-control-font-size;
   color: @carousel-control-color;
@@ -82,12 +85,12 @@
 
   // Set gradients for backgrounds
   &.left {
-    #gradient > .horizontal(@start-color: rgba(0,0,0,.5); @end-color: rgba(0,0,0,.0001));
+   
   }
   &.right {
     left: auto;
     right: 0;
-    #gradient > .horizontal(@start-color: rgba(0,0,0,.0001); @end-color: rgba(0,0,0,.5));
+   
   }
 
   // Hover/focus state
@@ -96,9 +99,13 @@
     outline: 0;
     color: @carousel-control-color;
     text-decoration: none;
-    .opacity(.9);
-  }
 
+    
+  }
+  &:hover {
+    background-color: rgba(0,0,0,.5);
+    .opacity(1);
+  }
   // Toggles
   .icon-prev,
   .icon-next,
@@ -147,7 +154,7 @@
 
 .carousel-indicators {
   position: absolute;
-  bottom: 10px;
+  bottom: 40px !important;
   left: 50%;
   z-index: 15;
   width: 60%;
@@ -210,6 +217,7 @@
 
   // Scale up the controls a smidge
   .carousel-control {
+
     .glyphicon-chevron-left,
     .glyphicon-chevron-right,
     .icon-prev,
@@ -241,3 +249,5 @@
     bottom: 20px;
   }
 }
+
+

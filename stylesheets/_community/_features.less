@@ -34,6 +34,8 @@
 
 #subproject #navbar-fixed {
   margin-top: 0px;
+
+
 }
 
 /* -- id changed to class for stickynav ---- */
@@ -205,14 +207,16 @@
 /* --- The "A JBoss Project box --- */
 #ajbossproject {
   margin-top: 8px;
-  width: 130px;
-  height: 20px;
-  background-color: rgba(red(@gray-darker), green(@gray-darker), blue(@gray-darker), 0.75);
-  filter:alpha(opacity=75); /* For IE8 and earlier */
-  color: @gray-lighter;
-  -moz-border-radius: 2px;  /* firefox */
-  -webkit-border-radius: 2px; /* safari/chrome */
-  border-radius: 2px; /* CSS3, works in IE9 */
+  width: 120px;
+  height: 27px;
+line-height: 20px;
+font-size: 12px;
+color:@gray-dark;
+  background-color: transparent;
+  text-transform: uppercase;
+  border-bottom: 2px solid @gray-dark;
+
+
 }
 
 
@@ -392,9 +396,10 @@
 /* ------------------ Project banner, tagline and tab ------------------------- */
 .banner {
   position: relative;
-  margin-bottom: -5px;
   z-index: 0;
-
+  margin: 0 -@grid-gutter-width;
+  background-repeat: no-repeat;
+  border-bottom:  1px solid @gray-lighter;
   a {
     height: 100px;
     width: 400px;
@@ -406,7 +411,7 @@
 .taglinelight, .taglinedark {
   font-size: 23px;
   position: absolute;
-  right: 40px;
+  right: 0px;
   bottom: 19px;
   z-index: 100;
 }
@@ -459,24 +464,28 @@
 /*-------- This is for project sites that want to include a project footer navigation  ----------- */
 
 footer.container {
-  background-color: @gray-dark;
+  background-color: @gray-darker;
   padding-top: 30px;
   padding-bottom: 30px;
-  -moz-border-radius: 0 0 4px 4px;  /* firefox */
-  -webkit-border-radius: 0 0 4px 4px; /* safari/chrome */
-  border-radius: 0 0 4px 4px; /* CSS3, works in IE9 */
+
 
   .container {
     background-color: transparent;
   }
 
-  h1, h2, h3, h4, h5, h6, p, a {
+  h1, h2, h3, h4, h5, h6 {
+    color: @gray-lighter;
+  }
+  a, p {
     color: @gray-light;
+  }
+  a:hover {
+    text-decoration:underline;
   }
 
   ul, ol {
     list-style: none;
-    margin-left: 10px;
+    margin-left: 0px;
   }
 }
 
@@ -491,6 +500,7 @@ footer.container {
   font-weight: normal;
   font-style: normal;
 }
+
 
 @font-face {
   font-family: 'TitilliumText22LLight';
@@ -545,6 +555,44 @@ footer.container {
     url('@{jborg_fonts_url}/titilliumtext/TitilliumText22L006-webfont.svg#TitilliumText22LXBold') format('svg');
   font-weight: normal;
   font-style: normal;
+}
+
+
+
+@font-face {
+  font-family: 'SourceSansPro';
+  src: url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-Regular.eot');
+  src: url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-Regular.eot?#iefix') format('embedded-opentype'),
+       url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-Regular.woff') format('woff'),
+       url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-Regular.ttf') format('truetype'),
+       url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-Regular.svg#SourceSansPro-Regular') format('svg');
+}
+
+@font-face {
+  font-family: 'SourceSansPro-ExtraLight';
+  src: url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-ExtraLight.eot');
+  src: url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-ExtraLight.eot?#iefix') format('embedded-opentype'),
+       url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-ExtraLight.woff') format('woff'),
+       url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-ExtraLight.ttf') format('truetype'),
+       url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-ExtraLight.svg#SourceSansPro-ExtraLight') format('svg');
+}
+
+@font-face {
+  font-family: 'SourceSansPro-Bold';
+  src: url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-Bold.eot');
+  src: url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-Bold.eot?#iefix') format('embedded-opentype'),
+       url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-Bold.woff') format('woff'),
+       url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-Bold.ttf') format('truetype'),
+       url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-Bold.svg#SourceSansPro-Bold') format('svg');
+}
+
+@font-face {
+  font-family: 'SourceSansPro-Light';
+  src: url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-Light.eot');
+  src: url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-Light.eot?#iefix') format('embedded-opentype'),
+       url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-Light.woff') format('woff'),
+       url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-Light.ttf') format('truetype'),
+       url('@{jborg_fonts_url}/sourcesanspro/SourceSansPro-Light.svg#SourceSansPro-Light') format('svg');
 }
 
 /* -------------------------Sections------------------------- */
@@ -827,10 +875,10 @@ hr.soften {
     text-indent: -9999px;
     display: block;
     margin: 0;
-    background:@blueDark url(http://static.jboss.org/common/images/top.png) no-repeat center center;
+    background:@main-color url(http://static.jboss.org/common/images/top.png) no-repeat center center;
   }
   a:hover {
-    background-color:@blue;
+    background-color:@gray;
   }
 }
 
@@ -2229,3 +2277,137 @@ ul.supportedin {
 }
 
 
+
+/* ---------------- UBERFIRE site custom styles ------------------------------------ */
+
+
+.uberfire-jumbotron {
+  margin:0 -@grid-gutter-width @grid-gutter-width;
+  color:#fff;
+}
+
+.uberfire-jumbotron .carousel-inner{
+  height:500px;
+  
+}
+
+.uberfire-jumbotron .carousel-inner .item {
+  height:@carousel-fixed-height;
+}
+.uberfire-jumbotron .carousel-control {
+  padding-top:0 !important;
+  line-height:@carousel-fixed-height;
+}
+
+.uberfire-jumbotron .carousel-inner .item.main {
+  background-color: @main-color;
+}
+
+.uberfire-jumbotron .carousel-inner .item.download {
+  
+  background-color: @gray-dark;
+  
+}
+.uberfire-jumbotron .carousel-inner .item.java {
+  background-color: @secondary-color;
+  color: @gray-dark;
+}
+
+.uberfire-jumbotron .carousel-inner .item p {
+  opacity:.7;
+}
+
+.uberfire-jumbotron .carousel-inner .item .img-top {
+  position:relative;
+  top:-100px;
+}
+
+.uberfire-jumbotron .carousel-inner .item h2 {
+  padding-top:@grid-gutter-width;
+  padding-bottom: @grid-gutter-width/2;
+}
+
+
+
+.uberfire-blog {
+  margin-top: @grid-gutter-width/2;
+}
+
+.uberfire-blog .well{
+     height:400px;
+     background-color: #FFF;
+     border-color:  @gray-lighter;
+}
+.uberfire-blog .well h2{
+  
+  border-bottom: 1px solid @gray-lighter;
+  padding-bottom: @grid-gutter-width/2;
+  margin-bottom: @grid-gutter-width;
+}
+
+.uberfire-features {
+  margin-top:-60px;
+}
+.uberfire-features .well{
+     min-height:420px;
+}
+.uberfire-features .well .item-img-container {
+  margin:-@grid-gutter-width -@grid-gutter-width @grid-gutter-width;
+}
+
+.uberfire-nav {
+  margin: 0  -@grid-gutter-width;
+}
+
+footer .license {
+  padding-left: @grid-gutter-width;
+  border-left: 5px solid @gray-dark;
+}
+
+
+body.scrolled {
+  padding-top:@navbar-height;
+}
+
+.navbar.navbar-fixed::before {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 51px 61px 0 0;
+    border-color: @gray-darker transparent transparent transparent;
+    position: absolute;
+    content: '';
+    right: -61px;
+    top: -1px;
+}
+
+
+.navbar .fixed-brand {
+  display:none;
+  margin-right:15px;
+}
+
+.navbar.navbar-fixed .fixed-brand {
+  display:block;
+}
+
+
+@media (max-width: 780px) {
+    .uberfire-nav {
+      margin: 0  -10px;
+    }
+    .uberfire-jumbotron {
+      margin: 0  -10px;
+    }
+     .carousel-indicators {
+      bottom: 60px !important;
+    }
+   
+}
+
+@media (max-width: 480px) {
+
+    .main-container {
+      overflow-x: hidden;
+    }
+}

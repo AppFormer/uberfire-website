@@ -4,20 +4,25 @@
 
 
 //== Colors
+//UBERFIRE colors
+@main-color:			#E95A35;
+@secondary-color:		#ECCA5E;
+@font-color:			#464141;
 //
 //## Gray and brand colors for use across Bootstrap.
+@gray-dark:              #464141;
+@gray-darker:            darken(@gray-dark, 10%);
+@gray:                   lighten(@gray-dark, 20%);
+@gray-light:             lighten(@gray-dark, 40%);
+@gray-lighter:           lighten(@gray-dark, 60%);
+@gray-bgr:        		 lighten(@gray-dark, 70%);
 
-@gray-darker:            #424242;
-@gray-dark:              #656565;
-@gray:                   #8c8f91;
-@gray-light:             #d5d5d5;
-@gray-lighter:           #e6e7e8;
-
-@brand-primary:         #4a5d75;
+@brand-primary:         @main-color;
 @brand-success:         #5cb85c;
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
+
 
 
 //== Scaffolding
@@ -30,7 +35,7 @@
 @text-color:            @gray-dark;
 
 //** Global textual link color.
-@link-color:            #369;
+@link-color:            #E95A35;
 //** Link hover color set via `darken()` function.
 @link-hover-color:      darken(@link-color, 15%);
 
@@ -39,7 +44,7 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  "SourceSansPro", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -49,8 +54,8 @@
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
-@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
-@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
+@font-size-h1:            floor((@font-size-base * 2.6));  // ~36px
+@font-size-h2:            floor((@font-size-base * 2.15));  // ~30px
 @font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
 @font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
 @font-size-h5:            @font-size-base;
@@ -62,8 +67,8 @@
 @line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
 
 //** By default, this inherits from the `<body>`.
-@headings-font-family:    "TitilliumText22LMedium", Helvetica, Arial, sans-serif;
-@headings-font-weight:    bold;
+@headings-font-family:    "SourceSansPro", Helvetica, Arial, sans-serif;
+@headings-font-weight:    normal;
 @headings-line-height:    1.1;
 @headings-color:          inherit;
 
@@ -99,9 +104,9 @@
 @line-height-large:         1.33;
 @line-height-small:         1.5;
 
-@border-radius-base:        4px;
+@border-radius-base:        0px;
 @border-radius-large:       6px;
-@border-radius-small:       3px;
+@border-radius-small:       0px;
 
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #fff;
@@ -336,7 +341,7 @@
 
 // Basics of a navbar
 @navbar-height:                    50px;
-@navbar-margin-bottom:             @line-height-computed;
+@navbar-margin-bottom:             0;
 @navbar-border-radius:             @border-radius-base;
 @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
@@ -369,7 +374,7 @@
 // Inverted navbar
 // Reset inverted navbar basics
 @navbar-inverse-color:                      @gray-light;
-@navbar-inverse-bg:                         @gray-dark;
+@navbar-inverse-bg:                         @gray-darker;
 @navbar-inverse-border:                     @gray-dark;
 
 // Inverted navbar links
@@ -737,8 +742,8 @@
 //
 //##
 
-@well-bg:                     #f5f5f5;
-@well-border:                 darken(@well-bg, 7%);
+@well-bg:                     @gray-bgr;
+@well-border:                 @well-bg;
 
 
 //== Badges
@@ -780,11 +785,12 @@
 //
 //##
 
-@carousel-text-shadow:                        0 1px 2px rgba(0,0,0,.6);
+@carousel-fixed-height:						  500px;
+@carousel-text-shadow:                        none;
 
 @carousel-control-color:                      #fff;
-@carousel-control-width:                      15%;
-@carousel-control-opacity:                    .5;
+@carousel-control-width:                      10%;
+@carousel-control-opacity:                    .2;
 @carousel-control-font-size:                  20px;
 
 @carousel-indicator-active-bg:                #fff;

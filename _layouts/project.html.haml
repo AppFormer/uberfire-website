@@ -3,7 +3,7 @@
   %head
     = partial( page.head_partial.nil? ? 'head.html.haml' : page.head_partial , { "real_page" => page } )
   %body
-    %div{:id => "#{page.subproject ? 'subproject' : ''}"}
+    %div{:id => "#{page.subproject ? 'subproject' : ''}",:class => "main-container"}
       / begin accesibility skip to top
       %ul#top.visuallyhidden
         %li

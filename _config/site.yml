@@ -57,17 +57,18 @@ wget:
     - http://static.jboss.org/theme/js/libs/prettify/188.0.0/prettify.min.js
     - http://static.jboss.org/theme/js/libs/holder/1.9/holder.js
     - http://static.jboss.org/theme/fonts/titilliumtext/
+    - http://static.jboss.org/uberfire/fonts/sourcesanspro/
     - http://static.jboss.org/theme/fonts/font-awesome/
     - http://static.jboss.org/theme/images/common/
-    - http://static.jboss.org/example/
+    - http://static.jboss.org/uberfire/
 
 # Update resource URLs based on the profile
 profiles:
   development:
-    jborg_fonts_url: /cache/static.jboss.org/theme/fonts
+    jborg_fonts_url: /cache/static.jboss.org/uberfire/fonts
     jborg_images_url: /cache/static.jboss.org/theme/images
     jborg_js_url: /cache/static.jboss.org/theme/js
-    project_images_url: /cache/static.jboss.org/example/images
+    project_images_url: /cache/static.jboss.org/uberfire/images
     bootstrap_css_url: /stylesheets-source/_bootstrap-community
     bootstrap_js_url: /javascripts/bootstrap-community
     symlinker:
@@ -77,7 +78,7 @@ profiles:
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
     jborg_js_url: http://static.jboss.org/theme/js
-    project_images_url: http://static.jboss.org/example/images
+    project_images_url: http://static.jboss.org/uberfire/images
     bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/3.2.0.0/bootstrap-community
     bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/3.2.0.0/bootstrap-community
     base_url: http://example-stg.jboss.org
@@ -93,7 +94,7 @@ profiles:
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
     jborg_js_url: http://static.jboss.org/theme/js
-    project_images_url: http://static.jboss.org/example/images
+    project_images_url: http://static.jboss.org/uberfire/images
     bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/3.2.0.0/bootstrap-community
     bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/3.2.0.0/bootstrap-community
     base_url: http://example.jboss.org

@@ -14,7 +14,7 @@
 
 var isNavBarFixed = 0;
 
-var defaultNavbarOffset = $("#sticky-navbar").length ? $("#sticky-navbar").offset().top : 0 ;
+var defaultNavbarOffset = $("#sticky-navbar").length  ? $("#sticky-navbar").offset().top : 0 ;
 
 processScroll();
 $(window).on('scroll', processScroll);
@@ -45,19 +45,22 @@ function processScroll() {
   }
 
   // Tabzilla offset needs to bo added if it's open.
-  if (!isNavBarFixed && $(window).scrollTop() >= (defaultNavbarOffset + additionalTabzillaOffset) ) {
+  if (!isNavBarFixed && $(window).scrollTop() >= (defaultNavbarOffset + additionalTabzillaOffset + 50) ) {
 
     // Switching navbar style to fixed position at the top.
     navbar.addClass("navbar-fixed");
     navbar.removeClass("navbar-fix");
-
+    //body class for padding 
+    $("body").addClass("scrolled");
     // Trick in order to prevent content movement when the navigation starts to scroll.
     breadcrumb.addClass("breadcrumb-fixed");
     breadcrumb.removeClass("breadcrumb");
 
     isNavBarFixed = 1;
 
-  } else if (isNavBarFixed && $(window).scrollTop() < (defaultNavbarOffset + additionalTabzillaOffset) ) {
+  
+
+  } else if (isNavBarFixed && $(window).scrollTop() < (defaultNavbarOffset + additionalTabzillaOffset + 50) ) {
 
     // Switching navbar style to non-fixed position.
     navbar.addClass("navbar-fix");
@@ -67,6 +70,9 @@ function processScroll() {
     breadcrumb.addClass("breadcrumb");
 
     isNavBarFixed = 0;
+
+    //body class for padding 
+    $("body").removeClass("scrolled");
 
   }
 }
