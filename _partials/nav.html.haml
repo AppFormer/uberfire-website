@@ -10,7 +10,7 @@
         %ul.nav.navbar-nav
           %li
             .fixed-brand
-              %img(src="/imgupload/navbar-logo.png"  height="50px")
+              %img(src="#{site.project_images_url}/navbar-logo.png"  height="50px")
           
           %li{:class=>"#{'active' if page.output_path.start_with?('/index') }" }<
             %a(href="#{site.base_url}/index.html") Home

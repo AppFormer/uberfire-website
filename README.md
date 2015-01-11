@@ -59,3 +59,7 @@ Once you're happy with your website in development mode update the `profiles: st
 7. Publish the website
 ----------------------
 If everyone is happy with staging then update the `profiles: production: base_url:` property in *_config/site.yml* to point to your production domain and run the `bundle exec awestruct -P production` command to produce a version that can be uploaded for the public to view.
+
+READ HERE: In order to see the images,  you need to copy the content of the upload/ directory to the cache/static.jboss.org/uberfire/ directory. When the webpage is uploaded to a real server, we need to upload the contents of the 'upload' directory to the official jboss server that contains the static images.
+
+
