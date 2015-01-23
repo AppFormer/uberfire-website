@@ -71,6 +71,7 @@ profiles:
     project_images_url: /cache/static.jboss.org/uberfire/images
     bootstrap_css_url: /stylesheets-source/_bootstrap-community
     bootstrap_js_url: /javascripts/bootstrap-community
+    base_url: http://uberfireframework.org/
     symlinker:
       from: ../stylesheets
       to: ./_site/stylesheets-source
@@ -91,13 +92,13 @@ profiles:
     css_minifier: enabled
     js_minifier: enabled
     html_minifier: enabled
-    jborg_fonts_url: http://static.jboss.org/theme/fonts
-    jborg_images_url: http://static.jboss.org/theme/images
-    jborg_js_url: http://static.jboss.org/theme/js
-    project_images_url: http://static.jboss.org/uberfire/images
-    bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/3.2.0.0/bootstrap-community
-    bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/3.2.0.0/bootstrap-community
-    base_url: http://example.jboss.org
+    jborg_fonts_url: http://uberfire-salaboy.rhcloud.com/uf/cache/static.jboss.org/uberfire/fonts
+    jborg_images_url: http://uberfire-salaboy.rhcloud.com/uf/cache/static.jboss.org/theme/images
+    jborg_js_url: http://uberfire-salaboy.rhcloud.com/uf/cache/static.jboss.org/theme/js
+    project_images_url: http://uberfire-salaboy.rhcloud.com/uf/cache/static.jboss.org/uberfire/images
+    bootstrap_css_url: http://uberfire-salaboy.rhcloud.com/uf/stylesheets/
+    bootstrap_js_url: http://uberfire-salaboy.rhcloud.com/uf/javascripts/bootstrap-community
+    base_url: http://uberfire-salaboy.rhcloud.com/uf/
     wget:
       enabled: false
     # Uncomment the line below and provide a valid Google Analytics ID to enable tracking of your site in this profile.

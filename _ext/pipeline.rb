@@ -1,3 +1,4 @@
+require 'bootstrap-sass'
 require 'wget_wrapper'
 require 'js_minifier'
 require 'css_minifier'

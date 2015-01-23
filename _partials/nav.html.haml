@@ -13,13 +13,13 @@
               %img(src="#{site.project_images_url}/navbar-logo.png"  height="50px")
           
           %li{:class=>"#{'active' if page.output_path.start_with?('/index') }" }<
-            %a(href="#{site.base_url}/index.html") Home
+            %a(href="/index.html") Home
           %li{:class=>"#{'active' if page.output_path.start_with?('/downloads') }" }<
-            %a(href="#{site.base_url}/downloads.html") Downloads
+            %a(href="/downloads.html") Downloads
           %li{:class=>"#{'active' if page.output_path.start_with?('/docs') }" }<
-            %a(href="#{site.base_url}/docs.html") Documentation
+            %a(href="/docs/") Documentation
           %li{:class=>"#{'active' if page.output_path.start_with?('/community') }" }<
-            %a(href="#{site.base_url}/community.html") Join our Community
+            %a(href="/community.html") Join our Community
 
 
 
