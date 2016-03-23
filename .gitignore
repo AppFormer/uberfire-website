@@ -1,2 +1,6 @@
 .project
 target
+.awestruct/
+.sass-cache/
+_site/
+_tmp/
