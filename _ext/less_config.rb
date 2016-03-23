@@ -33,6 +33,9 @@ module Awestruct
         if !site.jborg_images_url.nil?
           output+= "@jborg_images_url: \"" + File.join(site.jborg_images_url , "common") + "\" ;\n"
         end
+        if !site.project_fonts_url.nil?
+          output+= "@project_fonts_url: \"" + site.project_fonts_url + "\";\n"
+        end
 
         # Create a temporary file with the merged content.
         tmpOutputPath = File.join( site.config.stylesheets_dir , "_config-variables.less")

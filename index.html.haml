@@ -20,9 +20,7 @@ title: Uberfire Homepage
         / Carousel items
         .carousel-inner
           .item.main.active
-            .col-md-6.hidden-sm.hidden-xs   
-              
-            .col-md-6      
+            .col-md-12    
               %h2 UberFire is a Rich Client Platform framework ready for the Web. 
               %p  Build on top of GWT and Errai,  Uberfire allows us to quickly build complex web applications purely in Java. Using your favourite IDEs (Eclipse, Netbeans, IntelliJ) you can quickly create workbench style applications. UberFire works flawlessly in clustered and highly-available deployments.  
           .item.errai
@@ -33,13 +31,13 @@ title: Uberfire Homepage
               %button.btn.btn-primary{href: "http://erraiframework.org"} Errai Framework website &raquo;
               
             .col-md-6.hidden-sm.hidden-xs   
-              %img(src="#{site.project_images_url}/errai.png" class="img-responsive")    
+              %img(src="#{site.project_images_url}/errai.png" class="img-responsive center-block")    
           .item.java
             .col-md-6      
               %h2 Pure Java 
               %p  You just need to write all your code in Pure Java and GWT & Errai will do the rest for you. You will be free to use your favourite IDE to refactor and debug your code.
             .col-md-6.hidden-sm.hidden-xs   
-              %img(src="#{site.project_images_url}/purejava.png" class="img-responsive")
+              %img(src="#{site.project_images_url}/purejava.png" class="img-responsive center-block")
         
           .item.download
             .col-md-6
@@ -48,7 +46,7 @@ title: Uberfire Homepage
               %br
               %button.btn.btn-primary{href: "http://search.maven.org/remotecontent?filepath=org/uberfire/showcase-distribution-wars/0.5.0.CR10/showcase-distribution-wars-0.5.0.CR10-tomcat7.0.war"} Download (Tomcat) Showcase now 
             .col-md-6.hidden-sm.hidden-xs      
-              %img(src="#{site.project_images_url}/downloads.png" class="img-responsive img-top")
+              %img(src="#{site.project_images_url}/downloads.png" class="img-responsive img-top center-block")
          
         / Carousel nav
         %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"} ‹
@@ -83,6 +81,14 @@ title: Uberfire Homepage
       .well.events
         %h2 Community Events
         .item
+          %h5 The Developer's Conference 2016 Florian&oacute;polis BR
+          %p< Uberfire's commiter, Eder Ignatowicz will speak at TDC 2016 Florian&oacute;polis. If you want to discover more about Uberfire, this is a great opportunity! Take a look at the conference site for more information.
+          %a(href="http://www.thedevelopersconference.com.br/tdc/2016/index.html#florianopolis") TDC 2016 Site &raquo; 
+        .item
+          %h5 QCon SP 2016 BR
+          %p< Some Uberfire team members will be at QCon SP 2016! Alexandre Porcelli and Eder Ignatowicz will give speeches, which is a good opportunity to talk more with Uberfire's commiters! Take a look at the conference site for more information.
+          %a(href="http://qconsp.com/") QCon SP Site &raquo; 
+        .item
           %h5 GWT Create 2015 US/EU 
           %p< Uberfire will be at GWT Create US/EU, take a look at the conference site for more information.
           %a(href="http://gwtcreate.com") GWT Create Site &raquo; 
@@ -90,6 +96,6 @@ title: Uberfire Homepage
       .well.events
         %h2 News
         .item
-          %h5 GWT Create 2015 US/EU 
-          %p< Uberfire will be at GWT Create US/EU, take a look at the conference site for more information.
-          %a(href="http://gwtcreate.com") GWT Create Site &raquo; 
+          %h5 Uberfire 0.8.0.CR1 released!
+          %p< If you prefer, access our github for the latest releases.
+          %a(href="https://github.com/uberfire/uberfire") Uberfire's Github &raquo; 
